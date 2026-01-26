@@ -1,0 +1,18 @@
+import java.util.*;
+
+class solution{
+    public static void main (String[] args){
+        int[] arr = {2,2,2,1,1,1,2,3,3};
+        Boolean v = false;
+
+        Set<Integer> set = new HashSet<>();
+
+        for(int nums : arr){
+            if(!set.add(nums)){
+                 v = true;
+            }
+        }
+        System.out.println(v);
+
+    }
+}
