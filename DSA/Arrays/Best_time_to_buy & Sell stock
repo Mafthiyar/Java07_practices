@@ -1,0 +1,27 @@
+import java.util.*;
+
+class solution{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int prices[] = new int[n];
+        int k = prices.length;
+
+        for(int i=0; i<k; i++){
+            prices[i] = sc.nextInt();
+        }
+        int max = 0;
+        int min = prices[0];
+
+        for(int i=0; i<k; i++){
+            int curr = prices[i];
+            min = Math.min(curr,min);
+
+            int profit = curr-min;
+            max = Math.max(min,max);
+
+        }
+        System.out.println(max);
+
+    }
+}
