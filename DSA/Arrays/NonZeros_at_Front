@@ -1,0 +1,32 @@
+class solution{
+    public static void nonZeros(int[] arr){
+        int n = arr.length;
+        int j = 0;
+        for(int i=0; i<n; i++){
+            if(arr[i] != 0){
+                arr[j] = arr[i];          //sending nonZero values to j array
+                j++;                     //j++ goes to next j = j+1 like j : 0 after that j: 1 ok !!
+            }
+        }
+
+        while(j < n){                   // like here ex : 1 2 7 0 0 ---> 3 < 5 ok ! so remaining spaces traced and becomes zero
+            arr[j] = 0;
+            j++;
+        }
+    }
+    public static void main (String[] args){
+        int arr[] = {0,1,0,2,7};
+        nonZeros(arr);
+
+        for(int a : arr){
+            System.out.print(a + " ");
+        }
+    }
+}
+
+
+
+o/p:
+
+input: 0 1 0 2 7
+output: 1 2 7 0 0
