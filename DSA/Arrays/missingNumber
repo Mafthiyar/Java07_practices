@@ -1,0 +1,37 @@
+import java.util.*;
+class Solution {
+    public static int missingNumber(int[] nums) {
+       int currXor = 0;
+    for(int i=0; i<=nums.length; i++){
+        currXor ^= i;
+    }        
+
+    int finalXor = 0;
+    for(int num : nums){
+        finalXor ^= num;
+    }
+
+    return currXor ^ finalXor;
+    }
+    public static void main (String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int nums[] = new int[n];
+
+        for(int i=0; i<nums.length; i++){
+            nums[i] = sc.nextInt();
+        }
+
+        int result = missingNumber(nums);
+        System.out.println(result);
+
+    }
+}
+
+
+
+# Xor table :
+0      0   -------  0
+0      1   -------  1
+1      0   -------  1
+1      1   -------  0
