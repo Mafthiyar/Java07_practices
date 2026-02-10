@@ -1,0 +1,30 @@
+import java.util.*;
+
+class Solution {
+    public static int[] intersection(int[] nums1, int[] nums2) {
+
+        Set<Integer> set = new HashSet<>();
+        Set<Integer> fset = new HashSet<>();
+
+        // store nums1 values
+        for (int num : nums1) {
+            set.add(num);
+        }
+
+        // find intersection
+        for (int num : nums2) {
+            if (set.contains(num)) {
+                fset.add(num);
+            }
+        }
+
+        // convert set to array
+        int[] result = new int[fset.size()];
+        int i = 0;
+        for (int num : fset) {
+            result[i++] = num;
+        }
+
+        return result;
+    }
+}
