@@ -1,0 +1,30 @@
+import java.util.Arrays;
+
+class rev{
+    public static void reverse(int[] arr,int l,int r){
+       while(l < r){
+           int temp = arr[r];
+           arr[r] = arr[l];
+           arr[l] = temp;
+           l++;
+           r--;
+       }
+    }
+
+
+    public static void main(String[] args){
+        int arr[] = {1,2,3,4,5,6,7};
+        int k = 3;
+
+        int n = arr.length;
+
+        reverse(arr,0,n-1);
+        reverse(arr,0,k-1);
+        reverse(arr,k,n-1);
+
+        for(int y : arr){
+            System.out.print(" " + y);
+        }
+
+    }
+}
