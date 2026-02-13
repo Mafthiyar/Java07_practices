@@ -25,3 +25,37 @@ class solution {
     }
     }
 }
+
+
+
+
+### 📝 Product of Array Except Self — Brief Explanation
+
+Instead of using division, this solution builds the answer using **prefix (left)** and **suffix (right)** products.
+
+First pass:
+
+* Store the product of all elements **before** each index into `result`.
+
+Second pass:
+
+* Multiply the product of all elements **after** each index into `result`.
+
+This gives:
+
+```
+result[i] = (product of left elements) × (product of right elements)
+```
+
+So each position contains the product of all numbers except itself.
+
+✔ Time: O(n)
+✔ Space: O(1) (excluding output array)
+
+---
+
+Short memory line:
+
+> Build LEFT first → Multiply RIGHT later → Avoid division
+
+
